@@ -10,7 +10,7 @@ namespace record_windows
     const std::wstring FmediaRecorder::FMEDIA_BIN = L"fmedia.exe";
     const std::wstring FmediaRecorder::PIPE_PROC_NAME = L"record_windows";
 
-    FmediaRecorder::FmediaRecorder(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler)
+    FmediaRecorder::FmediaRecorder(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler)
         : m_stateEventHandler(stateEventHandler),
           m_recordEventHandler(recordEventHandler),
           m_recordState(RecordState::stop),

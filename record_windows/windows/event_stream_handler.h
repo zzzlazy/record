@@ -1,3 +1,5 @@
+#pragma once
+
 #include <flutter/event_channel.h>
 #include <flutter/encodable_value.h>
 

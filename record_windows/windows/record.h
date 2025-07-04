@@ -27,9 +27,9 @@ namespace record_windows
 	class Recorder : public IMFSourceReaderCallback
 	{
 	public:
-		static HRESULT CreateInstance(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler, Recorder** recorder);
+		static HRESULT CreateInstance(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler, Recorder** recorder);
 
-		Recorder(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler);
+		Recorder(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler);
 		virtual ~Recorder();
 
 		HRESULT Start(std::unique_ptr<RecordConfig> config, std::wstring path);
@@ -93,8 +93,8 @@ namespace record_windows
 		double m_maxAmplitude = -160;
 		DWORD m_dataWritten = 0;
 
-		EventStreamHandler<>* m_stateEventHandler;
-		EventStreamHandler<>* m_recordEventHandler;
+		EventStreamHandler<EncodableValue>* m_stateEventHandler;
+		EventStreamHandler<EncodableValue>* m_recordEventHandler;
 
 		RecordState m_recordState = RecordState::stop;
 		std::unique_ptr<RecordConfig> m_pConfig;

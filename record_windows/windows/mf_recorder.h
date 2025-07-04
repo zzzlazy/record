@@ -24,7 +24,7 @@ namespace record_windows
     class MediaFoundationRecorder : public IRecorder, public IMFSourceReaderCallback
     {
     public:
-        MediaFoundationRecorder(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler);
+        MediaFoundationRecorder(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler);
         virtual ~MediaFoundationRecorder();
 
         // IRecorder接口实现
@@ -89,8 +89,8 @@ namespace record_windows
         double m_maxAmplitude = -160;
         DWORD m_dataWritten = 0;
 
-        EventStreamHandler<>* m_stateEventHandler;
-        EventStreamHandler<>* m_recordEventHandler;
+        EventStreamHandler<EncodableValue>* m_stateEventHandler;
+        EventStreamHandler<EncodableValue>* m_recordEventHandler;
 
         RecordState m_recordState = RecordState::stop;
         std::unique_ptr<RecordConfig> m_pConfig;

@@ -3,7 +3,7 @@
 
 namespace record_windows
 {
-    MediaFoundationRecorder::MediaFoundationRecorder(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler)
+    MediaFoundationRecorder::MediaFoundationRecorder(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler)
         : m_nRefCount(1),
         m_critsec(),
         m_pConfig(nullptr),

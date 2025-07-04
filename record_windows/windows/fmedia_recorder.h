@@ -13,7 +13,7 @@ namespace record_windows
     class FmediaRecorder : public IRecorder
     {
     public:
-        FmediaRecorder(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler);
+        FmediaRecorder(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler);
         virtual ~FmediaRecorder();
 
         HRESULT Start(std::unique_ptr<RecordConfig> config, std::wstring path) override;
@@ -38,8 +38,8 @@ namespace record_windows
         HRESULT CallFmedia(const std::vector<std::wstring>& arguments);
         HRESULT EndRecording();
 
-        EventStreamHandler<>* m_stateEventHandler;
-        EventStreamHandler<>* m_recordEventHandler;
+        EventStreamHandler<EncodableValue>* m_stateEventHandler;
+        EventStreamHandler<EncodableValue>* m_recordEventHandler;
         RecordState m_recordState;
         std::wstring m_recordingPath;
         std::unique_ptr<RecordConfig> m_pConfig;

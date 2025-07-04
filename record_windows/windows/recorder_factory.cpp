@@ -7,8 +7,8 @@
 namespace record_windows
 {
     std::unique_ptr<IRecorder> RecorderFactory::CreateRecorder(
-        EventStreamHandler<>* stateEventHandler,
-        EventStreamHandler<>* recordEventHandler)
+        EventStreamHandler<EncodableValue>* stateEventHandler,
+        EventStreamHandler<EncodableValue>* recordEventHandler)
     {
         // 根据Windows版本选择不同的录音器实现
         if (IsWindows10Plus())

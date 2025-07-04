@@ -40,8 +40,8 @@ namespace record_windows
     {
     public:
         static std::unique_ptr<IRecorder> CreateRecorder(
-            EventStreamHandler<>* stateEventHandler,
-            EventStreamHandler<>* recordEventHandler
+            EventStreamHandler<EncodableValue>* stateEventHandler,
+            EventStreamHandler<EncodableValue>* recordEventHandler
         );
     };
 } 

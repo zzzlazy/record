@@ -4,7 +4,7 @@
 namespace record_windows
 {
 	// static
-	HRESULT Recorder::CreateInstance(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler, Recorder** ppRecorder)
+	HRESULT Recorder::CreateInstance(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler, Recorder** ppRecorder)
 	{
 		auto pRecorder = new (std::nothrow) Recorder(stateEventHandler, recordEventHandler);
 
@@ -19,7 +19,7 @@ namespace record_windows
 		return S_OK;
 	}
 
-	Recorder::Recorder(EventStreamHandler<>* stateEventHandler, EventStreamHandler<>* recordEventHandler)
+	Recorder::Recorder(EventStreamHandler<EncodableValue>* stateEventHandler, EventStreamHandler<EncodableValue>* recordEventHandler)
 		: m_nRefCount(1),
 		m_critsec(),
 		m_pConfig(nullptr),

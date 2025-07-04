@@ -21,10 +21,6 @@ using namespace flutter;
 
 namespace record_windows
 {
-	enum RecordState {
-		pause, record, stop
-	};
-
 	class Recorder : public IMFSourceReaderCallback
 	{
 	public:

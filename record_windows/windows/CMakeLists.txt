@@ -66,7 +66,6 @@ if(MSVC)
   # Ensure warnings are not treated as errors
   target_compile_definitions(${PLUGIN_NAME} PRIVATE 
     NOMINMAX
-    WIN32_LEAN_AND_MEAN
   )
 endif()
 

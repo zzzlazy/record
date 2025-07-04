@@ -1,7 +1,6 @@
 #pragma once
 
 #define NOMINMAX
-#define WIN32_LEAN_AND_MEAN
 #include <memory>
 #include <flutter/encodable_value.h>
 #include <flutter/method_channel.h>

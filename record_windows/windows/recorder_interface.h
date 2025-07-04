@@ -12,10 +12,6 @@ using namespace flutter;
 
 namespace record_windows
 {
-    enum RecordState {
-        pause, record, stop
-    };
-
     // 录音器抽象接口
     class IRecorder
     {

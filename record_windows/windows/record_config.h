@@ -4,6 +4,9 @@
 
 namespace record_windows
 {
+	enum RecordState {
+		pause, record, stop
+	};
 
 	struct AudioEncoder
 	{

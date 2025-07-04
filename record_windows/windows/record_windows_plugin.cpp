@@ -330,18 +330,18 @@ namespace record_windows {
 		std::unique_ptr<StreamHandler<EncodableValue>> pRecordEventHandler{static_cast<StreamHandler<EncodableValue>*>(eventRecordHandler)};
 		eventRecordChannel->SetStreamHandler(std::move(pRecordEventHandler));
 
-		Recorder* pRecorder = NULL;
-
-		HRESULT hr = Recorder::CreateInstance(eventHandler, eventRecordHandler, &pRecorder);
-		if (SUCCEEDED(hr))
+		// 使用工厂方法创建录音器
+		auto recorder = RecorderFactory::CreateRecorder(eventHandler, eventRecordHandler);
+		if (recorder)
 		{
-			m_recorders.insert(std::make_pair(recorderId, std::move(pRecorder)));
+			m_recorders.insert(std::make_pair(recorderId, std::move(recorder)));
+			return S_OK;
 		}
 
-		return hr;
+		return E_FAIL;
 	}
 
-	Recorder* RecordWindowsPlugin::GetRecorder(std::string recorderId)
+	IRecorder* RecordWindowsPlugin::GetRecorder(std::string recorderId)
 	{
 		auto searchedRecorder = m_recorders.find(recorderId);
 		if (searchedRecorder == m_recorders.end()) {

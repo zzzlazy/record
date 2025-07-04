@@ -17,7 +17,7 @@
 #include <mferror.h>
 
 #include "utils.h"
-#include "record.h"
+#include "recorder_interface.h"
 #include <queue>
 
 using namespace flutter;
@@ -65,12 +65,12 @@ namespace record_windows {
 			std::unique_ptr<MethodResult<EncodableValue>> result);
 
 		HRESULT CreateRecorder(std::string recorderId);
-		Recorder* GetRecorder(std::string recorderId);
+		IRecorder* GetRecorder(std::string recorderId);
 		HRESULT ListInputDevices(MethodResult<EncodableValue>& result);
 
 		std::unique_ptr<RecordConfig> InitRecordConfig(const EncodableMap* args);
 
-		std::map<std::string, std::unique_ptr<Recorder>> m_recorders{};
+		std::map<std::string, std::unique_ptr<IRecorder>> m_recorders{};
 
 		// Called for top-level WindowProc delegation.
 		std::optional<LRESULT> HandleWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam);

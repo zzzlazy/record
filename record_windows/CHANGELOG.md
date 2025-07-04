@@ -1,3 +1,9 @@
+## 1.0.7
+* feat: Add dual backend system for Windows version compatibility.
+* feat: Automatically use MediaFoundation on Windows 10+ and fmedia on Windows 7/8.
+* fix: Resolve Windows 7 MFPlat.dll crash by using fmedia backend.
+* feat: Add version detection mechanism for automatic backend selection.
+
 ## 1.0.6
 * fix: Attempt to fix crash when recording on w10.
 

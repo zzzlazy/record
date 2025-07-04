@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "windows_version.h"
 
 namespace record_windows

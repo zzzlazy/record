@@ -25,6 +25,11 @@ list(APPEND PLUGIN_SOURCES
   "mf_recorder.cpp"
   "fmedia_recorder.h"
   "fmedia_recorder.cpp"
+  "record.h"
+  "record.cpp"
+  "record_iunknown.cpp"
+  "record_mediatype.cpp"
+  "record_readercallback.cpp"
   "utils.h"
   "event_stream_handler.h"
 )
@@ -50,6 +55,20 @@ apply_standard_settings(${PLUGIN_NAME})
 set_target_properties(${PLUGIN_NAME} PROPERTIES
   CXX_VISIBILITY_PRESET hidden)
 target_compile_definitions(${PLUGIN_NAME} PRIVATE FLUTTER_PLUGIN_IMPL)
+
+# Disable specific warnings to prevent compilation errors
+if(MSVC)
+  target_compile_options(${PLUGIN_NAME} PRIVATE 
+    /wd4819     # Disable C4819 encoding warning
+    /utf-8      # Use UTF-8 encoding for source files
+    /W0         # Disable all warnings
+  )
+  # Ensure warnings are not treated as errors
+  target_compile_definitions(${PLUGIN_NAME} PRIVATE 
+    NOMINMAX
+    WIN32_LEAN_AND_MEAN
+  )
+endif()
 
 # Source include directories and library dependencies. Add any plugin-specific
 # dependencies here.

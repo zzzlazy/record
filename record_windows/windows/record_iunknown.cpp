@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "record.h"
 
 namespace record_windows

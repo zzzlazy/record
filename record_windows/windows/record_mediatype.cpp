@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "record.h"
 
 #pragma warning(disable: 4201)

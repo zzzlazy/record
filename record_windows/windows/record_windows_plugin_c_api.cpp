@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "include/record_windows/record_windows_plugin_c_api.h"
 
 #include <flutter/plugin_registrar_windows.h>

@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "record_windows_plugin.h"
 #include <mfreadwrite.h>
 #include <Mferror.h>

@@ -1,7 +1,7 @@
 #ifndef FLUTTER_PLUGIN_RECORD_WINDOWS_PLUGIN_H_
 #define FLUTTER_PLUGIN_RECORD_WINDOWS_PLUGIN_H_
 
-
+#define NOMINMAX
 #include <flutter/plugin_registrar_windows.h>
 #include <flutter/encodable_value.h>
 #include <flutter/event_channel.h>

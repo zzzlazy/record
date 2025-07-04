@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "mf_recorder.h"
 #include "record_windows_plugin.h"
 

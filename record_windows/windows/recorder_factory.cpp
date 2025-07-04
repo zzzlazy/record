@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "recorder_interface.h"
 #include "windows_version.h"
 #include "mf_recorder.h"

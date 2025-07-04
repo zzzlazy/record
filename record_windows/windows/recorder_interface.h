@@ -3,6 +3,7 @@
 #include <memory>
 #include <string>
 #include <map>
+#define NOMINMAX
 #include <windows.h>
 #include "record_config.h"
 #include "event_stream_handler.h"

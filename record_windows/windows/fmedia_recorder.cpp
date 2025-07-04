@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "fmedia_recorder.h"
 #include "record_windows_plugin.h"
 #include <shlwapi.h>
